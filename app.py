@@ -65,7 +65,7 @@ if status_col:
 
 total = len(df)
 
-c1,c3,c4 = st.columns(4)
+c1,c3,c4 = st.columns(3)
 c1.metric("👥 Total Responden", total)
 c3.metric("📋 Jumlah Kolom", len(df.columns))
 c4.metric("📊 Data Tersaring", len(df))
