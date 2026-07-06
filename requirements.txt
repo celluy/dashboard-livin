@@ -2,3 +2,7 @@ streamlit
 pandas
 matplotlib
 google-play-scraper
+streamlit
+pandas
+plotly
+matplotlib
