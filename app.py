@@ -65,17 +65,8 @@ if status_col:
 
 total = len(df)
 
-rating_col = next((c for c in df.columns if "Rating" in c or "rating" in c), None)
-avg_rating = "-"
-if rating_col:
-    try:
-        avg_rating = round(pd.to_numeric(df[rating_col], errors="coerce").mean(),2)
-    except:
-        pass
-
-c1,c2,c3,c4 = st.columns(4)
+c1,c3,c4 = st.columns(4)
 c1.metric("👥 Total Responden", total)
-c2.metric("⭐ Rata-rata Rating", avg_rating)
 c3.metric("📋 Jumlah Kolom", len(df.columns))
 c4.metric("📊 Data Tersaring", len(df))
 
@@ -114,5 +105,4 @@ st.dataframe(df,use_container_width=True)
 csv=df.to_csv(index=False).encode("utf-8")
 st.download_button("⬇ Download Hasil Filter",csv,"hasil_filter.csv","text/csv")
 
-st.markdown("---")
-st.success("Dashboard Livin' by Mandiri selesai dibuat 🚀")
+
