@@ -93,12 +93,6 @@ with col3:
                          color_discrete_sequence=["#0A5EB0"])
         st.plotly_chart(fig,use_container_width=True)
 
-with col4:
-    if rating_col:
-        fig=px.histogram(df,x=rating_col,title="Distribusi Rating",
-                         color_discrete_sequence=["#FFD43B"])
-        st.plotly_chart(fig,use_container_width=True)
-
 st.subheader("📋 Data Responden")
 st.dataframe(df,use_container_width=True)
 
