@@ -19,30 +19,6 @@ div[data-testid="stMetric"]{
 </style>
 """, unsafe_allow_html=True)
 
-frekuensi = "Seberapa sering Anda menggunakan aplikasi Livin' By Mandiri"
-
-fig = px.bar(
-    df[frekuensi].value_counts().reset_index(),
-    x="count",
-    y=frekuensi,
-    orientation="h",
-    title="Frekuensi Penggunaan Livin"
-)
-
-st.plotly_chart(fig, use_container_width=True)
-
-kendala = "Apa kendala utama yang Anda alami?"
-
-fig = px.bar(
-    df[kendala].value_counts().reset_index(),
-    x="count",
-    y=kendala,
-    orientation="h",
-    title="Kendala yang Paling Sering Dialami"
-)
-
-st.plotly_chart(fig, use_container_width=True)
-
 @st.cache_data
 def load():
     return pd.read_csv("survey_clean.csv")
